@@ -1,4 +1,5 @@
 # Sistema de Locação de Veículos
+# Aluna: Phaola Paraguai Da Paixão Lustosa
 
 Este é um sistema simples de locação de veículos, desenvolvido em C. O sistema permite o cadastro de veículos e clientes, consulta dos dados cadastrados, e o registro de locações de veículos.
 
