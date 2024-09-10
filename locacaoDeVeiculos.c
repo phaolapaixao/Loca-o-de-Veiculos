@@ -131,10 +131,10 @@ void consultarVeiculos() {
             fprintf(arq, "%d\n", veiculos[i].numPortas);
             fprintf(arq, "%d ", veiculos[i].tipoDegasolina);
             switch (veiculos[i].tipoDegasolina) {
-            case 1: fprintf(arq,"Gasolina\n"); break;
-            case 2: fprintf(arq,"Etanol\n"); break;
-            case 3: fprintf(arq,"Diesel\n"); break;
-            default: fprintf(arq,"Desconhecido\n"); break; }
+                case 1: fprintf(arq,"Gasolina\n"); break;
+                case 2: fprintf(arq,"Etanol\n"); break;
+                case 3: fprintf(arq,"Diesel\n"); break;
+                default: fprintf(arq,"Desconhecido\n"); break; }
             fprintf(arq, "%ld KM\n",veiculos[i].quilometragem);
             fprintf(arq, "R$ %.2lf\n",veiculos[i].valorlocacao);
             fclose(arq); // Fecha o arquivo
@@ -178,17 +178,18 @@ void consultarVeiculos() {
 // funcao para consultar modelo
   void consultarModelo(){
     for(int i = 0; i < totalVeiculos; i ++){
-         printf("Descricao do Modelo: %s",veiculos[totalVeiculos].modelo.descricaoModelo); // imprime todos os modelos de veiculos cadastrados
+         printf("Modelo: %d\n", i + 1);
+         printf("Descricao do Modelo: %s",veiculos[i].modelo.descricaoModelo); // imprime todos os modelos de veiculos cadastrados
     }
     }
 //funcao para salvar modelo no arquivo
     void salvarNoAquirvoModelo(){
         for(int i = 0; i < totalVeiculos; i++){
-        FILE *arq = fopen("ModeloDoautomovel.txt","a"); // O tipo "a" acrescenta mais de um arquivo
-        if(arq){
-        fprintf(arq,"%s", veiculos[i].modelo.descricaoModelo);  // salvar todos os modelos de veiculos cadastrado no arquivo
-        fclose(arq);
-        printf("Salvo com sucesso.\n");
+            FILE *arq = fopen("ModeloDoautomovel.txt","a"); // O tipo "a" acrescenta mais de um arquivo
+            if(arq){
+                fprintf(arq,"%s", veiculos[i].modelo.descricaoModelo);  // salvar todos os modelos de veiculos cadastrado no arquivo
+                fclose(arq);
+                printf("Salvo com sucesso.\n");
         }
         else{
             printf("ERROR: nao foi possivel abrir o arquivo.\n\n");
@@ -199,17 +200,18 @@ void consultarVeiculos() {
     // função para consultar marcca
     void consultarMarca(){
         for(int i = 0; i < totalVeiculos; i++){
-        printf("Descricao do Marca: %s",veiculos[i].modelo.marca.marcaAutomovel); // imprime todos as marcas de veiculos cadastrados
+            printf("Marca: %d\n", i + 1);
+            printf("Descricao do Marca: %s",veiculos[i].modelo.marca.marcaAutomovel); // imprime todos as marcas de veiculos cadastrados
         }
     }
     //funcao para salvar marca no arquivo
      void salvarNoAquirvoMarca(){
         for(int i = 0; i < totalVeiculos; i++){
-        FILE *arq = fopen("MarcaDoautomovel.txt","a");
-        if(arq){
-        fprintf(arq, "%s",veiculos[i].modelo.marca.marcaAutomovel); // salva todos as marcas de veiculos cadastrados no arquivo
-        fclose(arq);
-        printf("Salvo com sucesso.\n");
+            FILE *arq = fopen("MarcaDoautomovel.txt","a");
+            if(arq){
+                fprintf(arq, "%s",veiculos[i].modelo.marca.marcaAutomovel); // salva todos as marcas de veiculos cadastrados no arquivo
+                fclose(arq);
+                printf("Salvo com sucesso.\n");
     }
         else{
             printf("ERROR: nao foi possivel abrir o arquivo.\n\n");
